@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-new
+  namespace: yadav
+  labels:
+    pod: frontend 
+spec:
+  volumes:
+  - name: volume-name
+    persistentVolumeClaim:
+      claimName: pvc-ms
+  containers:
+  - name: nginx-ctnew
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: volume-name
+      mountPath: /usr/share/nginx/html/

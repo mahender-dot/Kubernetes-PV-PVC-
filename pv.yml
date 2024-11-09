@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-ms
+  namespace: yadav
+  labels:
+    pv: storage
+spec:
+  azureFile:
+      secretName: azure-secret
+      shareName: ms-fileshare
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 10Gi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: devst241
+
+
+
+
+
+
+
+
+      ## kubectl create secret generic azure-secret --from-literal=azurestorageaccountname=devst241 --from-literal=azurestorageaccountkey=Rhvc+WasIUG55PdTDIlrB1L08/qZWveFJUd2RkwtHAF8arRHsCYeKsjzFSBh/6rK7Va4BIb+5FfX+AStAiPJIQ== 

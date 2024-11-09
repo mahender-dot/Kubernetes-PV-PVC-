@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-ms
+  namespace: yadav
+  labels:
+    pvc: stg-req
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: devst241
+  # selector:
+  #   matchLabels:
+  #     pv: storage
+    
+  
